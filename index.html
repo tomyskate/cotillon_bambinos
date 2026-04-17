@@ -39,9 +39,12 @@
       </div>
       <div class="logo-text">Bambinos<span>Cotillón & Repostería</span></div>
     </a>
-    <a class="nav-wa-btn" id="nav-wa" href="#" target="_blank" rel="noopener">
-      <span class="nav-wa-icon">💬</span> Pedir por WhatsApp
-    </a>
+    
+    <!-- CARRITO BUTTON -->
+    <button id="cart-toggle" class="nav-cart-btn" onclick="toggleCart()">
+      <span class="cart-icon">🛒</span>
+      <span id="cart-badge" class="cart-badge">0</span>
+    </button>
   </div>
 </nav>
 
@@ -196,6 +199,32 @@
   <div class="wa-fab-icon">💬<span class="wa-fab-pulse"></span></div>
   <span class="wa-fab-label">Escribinos ahora</span>
 </a>
+
+  <!-- CARRITO PANEL -->
+  <div id="cart-panel" class="cart-panel">
+    <div class="cart-header">
+      <div class="cart-header-title">
+        <span class="cart-title-icon">🛒</span>
+        <span>Mi carrito</span>
+        <span id="cart-item-count" class="cart-item-count">0 productos</span>
+      </div>
+      <button class="cart-close" onclick="toggleCart()">✕</button>
+    </div>
+    
+    <div id="cart-items" class="cart-items"></div>
+    
+    <div id="cart-totals" class="cart-totals"></div>
+    
+    <div class="cart-actions">
+      <button class="btn-cart-clear" onclick="clearCart()">Vaciar carrito</button>
+      <a id="cart-checkout" class="btn-cart-checkout" href="#" target="_blank">
+        <span>💬 Finalizar pedido por WhatsApp</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- TOAST CONTAINER (para feedback) -->
+  <div id="toast-container"></div>
 
 <script src="app.js"></script>
 </body>
